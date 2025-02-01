@@ -18,7 +18,7 @@ An open source digital products selling platform built with **Laravel**, **Inert
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
-## Features
+##Features
 
 - **User Registration & Authentication:** Secure login, registration, and password management.
 - **Product Management:** Easily manage digital products with CRUD operations.
@@ -27,21 +27,21 @@ An open source digital products selling platform built with **Laravel**, **Inert
 - **Admin Dashboard:** Manage orders, products, and users from a clean admin panel.
 - **Inertia.js Integration:** Seamless server-side rendering with client-side navigation.
 
-## Requirements
+##Requirements
 
 - **PHP** >= 8.0
 - **Composer** for dependency management
 - **Node.js** (>= 14.x) and **npm** or **yarn** for frontend dependencies
 - A database supported by Laravel (e.g., MySQL, PostgreSQL, SQLite)
 
-## Installation
+##Installation
 
 Follow these steps to set up the project locally:
 
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/digital-products-selling-script.git
+   git clone https://github.com/sajidimon/digital-products-selling-script.git
    cd digital-products-selling-script
    ```
 
@@ -170,4 +170,3 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use and 
 ---
 
 Happy coding!
-```
