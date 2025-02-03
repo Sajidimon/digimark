@@ -13,7 +13,7 @@
                 <button class="text-gray-300 hover:text-white focus:outline-none">
                     <i class="fas fa-user"></i>
                 </button>
-                <button class="text-gray-300 hover:text-white focus:outline-none">
+                <button @click="logout()" class="text-gray-300 hover:text-white focus:outline-none">
                     <i class="fas fa-sign-out-alt"></i>
                 </button>
             </div>
@@ -111,7 +111,12 @@
     </div>
 </template>
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
+import { router } from '@inertiajs/vue3'
+
+function logout() {
+    router.post('/admin-logout')
+}
 
 const isSidebarCollapsed = ref(false);
 const isMobile = ref(window.innerWidth < 768);
@@ -128,7 +133,6 @@ function toggleSidebar() {
         isSidebarCollapsed.value = !isSidebarCollapsed.value;
     }
 }
-
 
 function handleResize() {
     isMobile.value = window.innerWidth < 768;

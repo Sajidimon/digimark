@@ -1,5 +1,6 @@
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/vue3";
+import "vue3-toastify/dist/index.css";
 
 createInertiaApp({
     resolve: (name) => {
@@ -10,5 +11,15 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .mount(el);
+    },
+    progress: {
+        // The color of the progress bar...
+        color: "#29d",
+
+        // Whether to include the default NProgress styles...
+        includeCSS: true,
+
+        // Whether the NProgress spinner will be shown...
+        showSpinner: true,
     },
 });
