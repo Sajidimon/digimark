@@ -18,7 +18,7 @@ class ValidAdmin
     {
 
         if (!Auth::check()) {
-            return redirect()->route('loginPage');
+            abort(403, '403 | page not found');
         }
 
         // if (Auth::user()->role !== 'admin') {

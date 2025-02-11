@@ -1,4 +1,8 @@
 <template>
+    <div>
+
+        <Head title="admin register" />
+    </div>
     <div class="mt-14 mx-5">
         <div class="w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
             <div class="px-6 py-4">
@@ -45,7 +49,7 @@
 </template>
 
 <script setup>
-import { Link, router, useForm } from '@inertiajs/vue3';
+import { router, useForm } from '@inertiajs/vue3';
 import InputText from '../../../Components/InputText.vue';
 import { toast } from 'vue3-toastify';
 

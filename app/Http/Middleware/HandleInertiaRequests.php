@@ -2,6 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Category;
+use App\Models\Page;
+use App\Models\Product;
+use App\Models\Service;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
@@ -37,11 +42,18 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
-            'admin' => fn() => Auth::user() && Auth::user()->role === 'admin' ? [
+           'auth'=> fn()=> Auth::check() ? [
                 'id' => Auth::user()->id,
                 'name' => Auth::user()->name,
                 'email' => Auth::user()->email,
-            ] : null,
+                'role' => Auth::user()->role,
+           ] : null,
+            'cartLength' => session('cart') ? count(session('cart')) : 0,
+            'pages'=>Page::all(),
+            'categories'=>Category::all(),
+            'products'=>Product::all(),
+            'services'=>Service::all(),
+            'settingsData' => Setting::all(),
         ]);
     }
 }

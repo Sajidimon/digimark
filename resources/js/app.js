@@ -1,6 +1,7 @@
 import { createApp, h } from "vue";
-import { createInertiaApp } from "@inertiajs/vue3";
+import { createInertiaApp, Head, Link } from "@inertiajs/vue3";
 import "vue3-toastify/dist/index.css";
+
 
 createInertiaApp({
     resolve: (name) => {
@@ -10,6 +11,8 @@ createInertiaApp({
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
+            .component("Head", Head)
+            .component("Link", Link)
             .mount(el);
     },
     progress: {
